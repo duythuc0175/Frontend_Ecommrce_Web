@@ -19,9 +19,9 @@ const Header = () => {
   };
 
   return (
-    <div className='bg-primary'>
+    <div className='bg-primary bd-navbar'>
       <div className='container'>
-        <header className='d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-3 mt-3'>
+        <header className='navbar d-flex  flex-wrap bd-navbar align-items-center justify-content-center justify-content-md-between py-3 mb-3 mt-3'>
           <div className='d-flex align-items-center col-md-3 mb-2 mb-md-0'>
             <IconContext.Provider
               value={{
