@@ -26,7 +26,7 @@ const ProductCard = ({ pid, imageUrl, name, price }) => {
             alt='product'
             className='d-block user-select-none'
             width='100%'
-            height='200'
+            height='100%'
           />
           <div className='card-body'>
             <div className='d-flex justify-content-between align-items-center'>
