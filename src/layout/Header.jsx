@@ -3,38 +3,31 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { FaRainbow } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-
 import { AuthContext } from '@/contexts/AuthContext';
 
 const Header = () => {
   const { currentUser } = useContext(AuthContext);
-
   const [search, setSearch] = useState('');
-
   const navigate = useNavigate();
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault(); // Prevent form submission
     console.log('searching for:', search);
-    navigate(`products/search/${search.replace(' ', '+')}`);
+    navigate(`/products/search/${encodeURIComponent(search)}`);
   };
 
   return (
     <div className='bg-primary bd-navbar'>
       <div className='container'>
-        <header className='navbar d-flex  flex-wrap bd-navbar align-items-center justify-content-center justify-content-md-between py-3 mb-3 mt-3'>
+        <header className='navbar d-flex flex-wrap bd-navbar align-items-center justify-content-center justify-content-md-between py-3 mb-3 mt-3'>
           <div className='d-flex align-items-center col-md-3 mb-2 mb-md-0'>
-           
-          <a href='/' aria-label='Logo' className='mb-2 '>
-              <img src="./NOS.jpg" class="rounded float-left"width='65%'
-                height='50%' alt=""></img>
-               
-              </a>
-           
-           
+            <a href='/' aria-label='Logo' className='mb-2'>
+              <img src="./NOS.jpg" width='65%' height='50%' alt="Logo" />
+            </a>
             <ul className='nav ms-3 mb-md-0'>
               {currentUser && (
                 <>
-                  {currentUser.role == 'USER' ? (
+                  {currentUser.role === 'USER' && (
                     <li className=''>
                       <NavLink to='/'>
                         <button type='button' className='btn btn-primary'>
@@ -42,7 +35,7 @@ const Header = () => {
                         </button>
                       </NavLink>
                     </li>
-                  ) : null}
+                  )}
                   <li>
                     <NavLink to='/products'>
                       <button type='button' className='btn btn-primary'>
@@ -56,7 +49,7 @@ const Header = () => {
           </div>
 
           <div className='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
-            <form className='d-flex'>
+            <form className='d-flex' onSubmit={handleSearch}>
               <input
                 className='form-control me-sm-2'
                 type='search'
@@ -67,7 +60,6 @@ const Header = () => {
               <button
                 className='btn btn-secondary my-2 my-sm-0'
                 type='submit'
-                onClick={handleSearch}
               >
                 Search
               </button>
@@ -75,7 +67,7 @@ const Header = () => {
           </div>
 
           <div className='col-md-3 text-end'>
-            {currentUser == null ? (
+            {currentUser === null ? (
               <>
                 <Link to='/login'>
                   <button
@@ -96,8 +88,8 @@ const Header = () => {
               </>
             ) : (
               <div className='d-flex align-items-center col-md-3 mb-2 mb-md-0'>
-                {currentUser.role == 'USER' && (
-                  <Link to={'/cart'}>
+                {currentUser.role === 'USER' && (
+                  <Link to='/cart'>
                     <div className='me-3'>
                       <IconContext.Provider
                         value={{
