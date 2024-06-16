@@ -66,7 +66,8 @@ const ProductDetails = () => {
             <section className='container'>
               <div className='row py-lg-3'>
                 <div className='pt-5 mx-auto d-flex justify-content-center'>
-                  <img src={product?.imageUrl} alt='product_image' />
+                  <img src={product?.imageUrl} alt='product_image'width='80%'
+                height='80%' />
                 </div>
               </div>
             </section>
@@ -103,7 +104,7 @@ const ProductDetails = () => {
                                 : 'Add to Cart'}
                             </button>
                           ))}
-                        <h4 className='text-primary me-2'>€{product?.price}</h4>
+                        <h4 className='text-primary me-2'>${product?.price}</h4>
                       </div>
                     </div>
                   </div>
