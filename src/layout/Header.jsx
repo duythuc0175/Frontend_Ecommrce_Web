@@ -22,7 +22,7 @@ const Header = () => {
         <header className='navbar d-flex flex-wrap bd-navbar align-items-center justify-content-center justify-content-md-between py-3 mb-3 mt-3'>
           <div className='d-flex align-items-center col-md-3 mb-2 mb-md-0'>
             <a href='/' aria-label='Logo' className='mb-2'>
-              <img src="./NOS.jpg" width='65%' height='50%' alt="Logo" />
+              <img src="./NOS.jpg" class="rounded" width='65%' height='50%' alt="Logo" />
             </a>
             <ul className='nav ms-3 mb-md-0'>
               {currentUser && (
