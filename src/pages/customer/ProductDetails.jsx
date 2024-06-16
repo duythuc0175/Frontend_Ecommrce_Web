@@ -104,7 +104,7 @@ const ProductDetails = () => {
                                 : 'Add to Cart'}
                             </button>
                           ))}
-                        <h4 className='text-primary me-2'>€{product?.price}</h4>
+                        <h4 className='text-primary me-2'>${product?.price}</h4>
                       </div>
                     </div>
                   </div>

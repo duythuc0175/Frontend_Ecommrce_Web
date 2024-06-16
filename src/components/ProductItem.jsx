@@ -28,7 +28,7 @@ const ProductItem = ({ product, linkToProduct }) => {
                   <h4>{product.name}</h4>
                 </div>
                 <div className='d-flex justify-content-start align-items-center'>
-                  <span>Price: €{product.price}</span>
+                  <span>Price: ${product.price}</span>
                 </div>
               </div>
             </div>

@@ -113,7 +113,7 @@ const Checkout = () => {
                             <div className='pt-3'>
                               <div className='d-flex justify-content-between align-items-center'>
                                 <h5>Cart Total</h5>
-                                <h5>€{cart?.total || 0}</h5>
+                                <h5>${cart?.total || 0}</h5>
                               </div>
                             </div>
                           </div>

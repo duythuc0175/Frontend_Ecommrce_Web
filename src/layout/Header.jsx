@@ -23,16 +23,14 @@ const Header = () => {
       <div className='container'>
         <header className='navbar d-flex  flex-wrap bd-navbar align-items-center justify-content-center justify-content-md-between py-3 mb-3 mt-3'>
           <div className='d-flex align-items-center col-md-3 mb-2 mb-md-0'>
-            <IconContext.Provider
-              value={{
-                color: 'white',
-                size: '40px',
-              }}
-            >
-              <a href='/' aria-label='Logo' className='mb-2'>
-                <FaRainbow />
+           
+          <a href='/' aria-label='Logo' className='mb-2 '>
+              <img src="./NOS.jpg" class="rounded float-left"width='65%'
+                height='50%' alt=""></img>
+               
               </a>
-            </IconContext.Provider>
+           
+           
             <ul className='nav ms-3 mb-md-0'>
               {currentUser && (
                 <>

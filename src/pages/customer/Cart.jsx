@@ -87,7 +87,7 @@ const Cart = () => {
                                 <span key={index}>
                                   <div className='d-flex justify-content-between align-items-center'>
                                     <p>{item.name}</p>
-                                    <p>€{item.price * item.quantity}</p>
+                                    <p>${item.price * item.quantity}</p>
                                   </div>
                                 </span>
                               ))}
@@ -95,7 +95,7 @@ const Cart = () => {
                           <div className='card-body'>
                             <div className='d-flex justify-content-between align-items-center'>
                               <h4>Cart Total</h4>
-                              <h4>€{cart?.total || 0}</h4>
+                              <h4>${cart?.total || 0}</h4>
                             </div>
                           </div>
                           <div className='card-body'>
