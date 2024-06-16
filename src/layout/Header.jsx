@@ -51,14 +51,14 @@ const Header = () => {
           <div className='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
             <form className='d-flex' onSubmit={handleSearch}>
               <input
-                className='form-control me-sm-2'
+                className='rounded form-control me-sm-2'
                 type='search'
                 placeholder='Search'
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
               <button
-                className='btn btn-secondary my-2 my-sm-0'
+                className='rounded btn btn-secondary my-2 my-sm-0'
                 type='submit'
               >
                 Search
